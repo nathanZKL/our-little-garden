@@ -1,0 +1,357 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --sky-top: #f7d9e7;
+    --sky-bottom: #dcecff;
+    --grass-light: #82b875;
+    --grass-dark: #4f8150;
+    --text-dark: #412f3b;
+    --text-soft: #705d68;
+    --card-background: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text-dark);
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+    background:
+        linear-gradient(
+            to bottom,
+            var(--sky-top) 0%,
+            var(--sky-bottom) 55%,
+            #b7d99e 55%,
+            var(--grass-dark) 100%
+        );
+}
+
+main {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hero {
+    width: min(900px, 92%);
+    margin: 0 auto;
+    padding: 70px 20px 30px;
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: #8c526f;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: normal;
+}
+
+.intro {
+    max-width: 600px;
+    margin: 18px auto 30px;
+    color: var(--text-soft);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.stat-card {
+    min-width: 160px;
+    padding: 18px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    background: var(--card-background);
+    box-shadow: 0 10px 30px rgba(78, 56, 71, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.stat-card span {
+    display: block;
+    color: #8c526f;
+    font-family: Georgia, serif;
+    font-size: 2rem;
+}
+
+.stat-card p {
+    margin: 5px 0 0;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+.message-section {
+    width: min(650px, 90%);
+    margin: 0 auto 30px;
+    padding: 18px 25px;
+    text-align: center;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 10px 25px rgba(50, 60, 50, 0.1);
+}
+
+#daily-message {
+    margin: 0;
+    color: #6f4f62;
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.garden {
+    position: relative;
+    width: min(1200px, 100%);
+    min-height: 520px;
+    margin: 0 auto;
+    padding: 30px 20px 0;
+}
+
+.flower-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 85px;
+    height: 230px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    transform-origin: bottom center;
+    animation: grow-flower 1.2s ease-out both;
+}
+
+.flower-wrapper:hover {
+    z-index: 5;
+    transform: scale(1.08);
+}
+
+.stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 7px;
+    height: 145px;
+    border-radius: 10px;
+    background: linear-gradient(
+        to right,
+        #3e7846,
+        #6eae66,
+        #3e7846
+    );
+    transform: translateX(-50%);
+}
+
+.leaf {
+    position: absolute;
+    width: 38px;
+    height: 19px;
+    background: #57955b;
+}
+
+.leaf-left {
+    bottom: 65px;
+    left: 7px;
+    border-radius: 35px 4px 35px 4px;
+    transform: rotate(25deg);
+}
+
+.leaf-right {
+    right: 7px;
+    bottom: 96px;
+    border-radius: 4px 35px 4px 35px;
+    transform: rotate(-25deg);
+}
+
+.flower-head {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: 78px;
+    height: 78px;
+    transform: translateX(-50%);
+    animation: sway 3.5s ease-in-out infinite alternate;
+}
+
+.petal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 42px;
+    border-radius: 50% 50% 42% 42%;
+    background: var(--petal-color);
+    box-shadow: inset 0 -5px 8px rgba(0, 0, 0, 0.08);
+    transform-origin: 50% 100%;
+}
+
+.petal:nth-child(1) {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.petal:nth-child(2) {
+    transform: translate(-50%, -100%) rotate(45deg);
+}
+
+.petal:nth-child(3) {
+    transform: translate(-50%, -100%) rotate(90deg);
+}
+
+.petal:nth-child(4) {
+    transform: translate(-50%, -100%) rotate(135deg);
+}
+
+.petal:nth-child(5) {
+    transform: translate(-50%, -100%) rotate(180deg);
+}
+
+.petal:nth-child(6) {
+    transform: translate(-50%, -100%) rotate(225deg);
+}
+
+.petal:nth-child(7) {
+    transform: translate(-50%, -100%) rotate(270deg);
+}
+
+.petal:nth-child(8) {
+    transform: translate(-50%, -100%) rotate(315deg);
+}
+
+.flower-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: 31px;
+    height: 31px;
+    border: 4px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: #f0b84f;
+    box-shadow: 0 3px 8px rgba(66, 43, 23, 0.2);
+    transform: translate(-50%, -50%);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(42, 30, 38, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-card {
+    position: relative;
+    width: min(460px, 100%);
+    padding: 42px 35px 36px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    background: #fff9fc;
+    box-shadow: 0 30px 80px rgba(35, 21, 29, 0.35);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    padding: 0;
+    color: #7f6574;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.modal-label {
+    margin-bottom: 8px;
+    color: #b17492;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+.modal-card h2 {
+    margin: 0 0 18px;
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+#modal-message {
+    margin: 0;
+    color: #68545f;
+    line-height: 1.8;
+}
+
+.footer-message {
+    width: min(700px, 90%);
+    margin: 30px auto 0;
+    padding: 35px 20px 50px;
+    color: rgba(255, 255, 255, 0.92);
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+@keyframes grow-flower {
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes sway {
+    from {
+        transform: translateX(-50%) rotate(-3deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(3deg);
+    }
+}
+
+@media (max-width: 700px) {
+    .hero {
+        padding-top: 45px;
+    }
+
+    .garden {
+        min-height: 700px;
+    }
+
+    .flower-wrapper {
+        transform: scale(0.85);
+    }
+
+    .flower-wrapper:hover {
+        transform: scale(0.92);
+    }
+}

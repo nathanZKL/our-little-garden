@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Our Little Garden</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section class="hero">
+            <p class="eyebrow">A garden made for you</p>
+
+            <h1>Our Little Garden</h1>
+
+            <p class="intro">
+                "I love you." -Nathan 7.21.2026
+            </p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <span id="days-together">0</span>
+                    <p>days together</p>
+                </div>
+
+                <div class="stat-card">
+                    <span id="flower-count">0</span>
+                    <p>flowers grown</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="message-section">
+            <p id="daily-message">
+                Come back tomorrow to help our garden grow.
+            </p>
+        </section>
+
+        <section
+            id="garden"
+            class="garden"
+            aria-label="Our growing flower garden"
+        ></section>
+
+        <section class="footer-message">
+            <p>
+                No matter how far apart we are, something beautiful
+                is always growing between us.
+            </p>
+        </section>
+    </main>
+
+    <div id="note-modal" class="modal hidden">
+        <div class="modal-card">
+            <button
+                id="close-modal"
+                class="close-button"
+                aria-label="Close note"
+            >
+                ×
+            </button>
+
+            <p class="modal-label">A note for you</p>
+
+            <h2 id="modal-title">Flower One</h2>
+
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
